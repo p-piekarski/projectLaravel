@@ -1,3 +1,11 @@
+Konfiguracja wstępna gita
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+
+
+
+
 Klonowanie repozytorium
 git clone https://github.com/p-piekarski/projectLaravel.git
 
@@ -49,6 +57,7 @@ git push
 
 Wsparcie w postaci filmu
 https://www.youtube.com/watch?v=LEystZRF8fQ&list=PLjHmWifVUNMJ4UxaI2AL4Joh7IlRqaTdd
+
 w postaci strony
 http://phpmajster.blogspot.com/2015/05/git-klonowanie-repozytorium-zdalne-repozytoria-i-klucze-ssh.html
 
