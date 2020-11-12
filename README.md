@@ -1,59 +1,68 @@
-Konfiguracja wstępna gita
+## 1. Konfiguracja wstępna gita
 
 git config --global user.name "John Doe"
 
 git config --global user.email johndoe@example.com
 
+2. Klonowanie repozytorium
 
-
-
-
-Klonowanie repozytorium
 git clone https://github.com/p-piekarski/projectLaravel.git
 
-Wchodzisz do folderu z projektem
+3. Wchodzisz do folderu z projektem
+
 git cd projectLaravel
 
-Sprawdzasz na jakim branchu jesteś
+4. Sprawdzasz na jakim branchu jesteś (musisz byc na masterze)
+
 git checkout
 
-Pobierasz najnowsza wersje projektu
+5. Pobierasz najnowsza wersje projektu
+
 git pull
 
 
  
 
 
-Działanie na branchach. 
-Stworz branch w momencie kiedy zaczynasz prace.
+## Działanie na branchach. 
+1. Stworz branch w momencie kiedy zaczynasz prace.
+
 git branch nazwabrancha
 
-Przełącz się na branch, który stworzyłeś
+2. Przełącz się na branch, który stworzyłeś
+
 git checkout nazwabrancha
 
-Sprawdż na jakim jesteś branchu
+3. Sprawdż na jakim jesteś branchu
+
 git checkout
 
-Pracuj, edytuj jak chcesz, a po skonczonej pracy
-Zapisywanie zmian w commitach
+4. Pracuj, edytuj jak chcesz, a po skonczonej pracy
+
+## Zapisywanie zmian w commitach
+
 git add .
+
 git commit -m "nazwacommita"
 
 Jak już zapisałeś prace na swoim branchu teraz musisz ją wrzucić na brancha master
-Zmieniasz brancha na master
+
+5. Zmieniasz brancha na master
+
 git checkout master
 
-Łączysz swojego brancha z branchem master - Pamietaj, że pliki wrzucasz na branch master dlatego musisz być na masterze
+6. Łączysz swojego brancha z branchem master - Pamietaj, że pliki wrzucasz na branch master dlatego musisz być na masterze
 
 git merge nazwabrancha
 
-Upewniasz się, że wszystko dobrze zrobiłeś
+7. Upewniasz się, że wszystko dobrze zrobiłeś
+
 git log --graph --decorate --all --oneline
 
-Usuwasz swojego brancha
+8. Usuwasz swojego brancha
 git branch -D nazwabrancha
 
-Wrzucasz wszystko na serwer
+9. Wrzucasz wszystko na serwer
 git push
 
 
@@ -69,5 +78,7 @@ http://phpmajster.blogspot.com/2015/05/git-klonowanie-repozytorium-zdalne-repozy
 
 
 Uruchamianie projektu
+
 Wchodzisz w konsoli w plik projektu i odpalasz komende
+
 php artisan serve
