@@ -20,3 +20,8 @@ Route::get('/rates', [App\Http\Controllers\ex_rates_ctrl::class, 'APIrates'])->n
 
 Route::get('/kantor', [App\Http\Controllers\cantor_ctrl::class, 'calculator'])->name('adminlte.kantor');
 
+Route::get('/mypage', [App\Http\Controllers\mypage_controller::class, 'mypage'])->name('adminlte.mypage');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
