@@ -8,20 +8,29 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/home', [App\Http\Controllers\DB_controller::class, 'username']);
 
-
-Auth::routes();
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('adminlte.logout');
 
 Route::get('/rates', [App\Http\Controllers\ex_rates_ctrl::class, 'APIrates'])->name('adminlte.rates');
-// Route::get('/rates', [App\Http\Controllers\ex_rates_ctrl::class, 'username'])->name('adminlte.rates');
 
 Route::get('/kantor', [App\Http\Controllers\cantor_ctrl::class, 'calculator'])->name('adminlte.kantor');
 
 Route::get('/mypage', [App\Http\Controllers\mypage_controller::class, 'mypage'])->name('adminlte.mypage');
 
-Auth::routes();
+Route::get('/history_json', [App\Http\Controllers\history_controller::class, 'json_view']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/history', [App\Http\Controllers\history_controller::class, 'history']);
+
+Route::get('/getHistory/{id}', [App\Http\Controllers\history_controller::class, 'getHistory']);
+
+
+
+Route::get('/history',[App\Http\Controllers\history_controller::class, 'index']);
+
+Route::get('/addHistory',[App\Http\Controllers\history_controller::class, 'create']);
+
+Route::post('/historyaction', [App\Http\Controllers\history_controller::class, 'storeHistory']);
+
+
