@@ -13,7 +13,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
-        @include('layouts.infoboxes')
+        <!-- @include('layouts.infoboxes') -->
         <div class="row">
             <div class="col-md-12">
             <div class="card">

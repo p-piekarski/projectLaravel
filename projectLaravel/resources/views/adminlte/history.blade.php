@@ -13,12 +13,21 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
-        @include('layouts.infoboxes')
-
+        <div class="col-12 col-sm-6 col-md-3">
+  </div>
+  <div class="info-box mb-3">
+    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+    <a href="/addHistory" class="nav-link">
+    <div class="info-box-content">  
+      <span class="info-box-text">Dodaj</span>
+      </a>
+    </div>
+  </div>
+<div>
 @foreach ($histories as $history)
-<li>{{ $history-> id }}. {{$history->data}} - {{$history->rodzaj_operacji}}, kwota: {{$history->kwota}}</li>
+<li>{{ $history-> id }}. {{$history->data}} {{$history->rodzaj_operacji}}, kwota: {{$history->kwota}}</li>
 @endforeach
-
+</div>
 <!-- <h1>Tylko daty</h1>
 
 @foreach ($histories as $history)
