@@ -30,8 +30,9 @@
             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
             <div class="info-box-content">
                 <a href="/history" class="nav-link">
-                <span class="info-box-text">Historia</span>
+                <span class="info-box-text">Historia</span></a>
             </div>
         </div>
     </div>
+
 </div>

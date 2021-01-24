@@ -33,4 +33,6 @@ Route::get('/addHistory',[App\Http\Controllers\history_controller::class, 'creat
 
 Route::post('/historyaction', [App\Http\Controllers\history_controller::class, 'storeHistory']);
 
+Route::get('/admin', [App\Http\Controllers\admin_controller::class, 'allUsers']);
 
+Route::delete('/deleteUser/{id}', [App\Http\Controllers\admin_controller::class, 'deleteUser']);

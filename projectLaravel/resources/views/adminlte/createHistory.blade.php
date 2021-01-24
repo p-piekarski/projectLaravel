@@ -7,13 +7,12 @@
 @include('layouts.mainsidebar');
 
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+    <div class="content-wrapper">
     @include('layouts.contentheader')
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
+        <div class="container-fluid">
         <!-- Info boxes -->
-        <!-- @include('layouts.infoboxes') -->
         <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -31,7 +30,7 @@
             <input type="submit" value="Dodaj">
         </div>
     </form>
-</div>   
+</div>
     </div>
     <aside class="control-sidebar control-sidebar-dark"></aside>
 </div>
