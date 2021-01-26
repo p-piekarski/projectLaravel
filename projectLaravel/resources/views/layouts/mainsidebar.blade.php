@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/home" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+      <i class="fas fa-piggy-bank fa-flip-horizontal"></i>
       <span class="brand-text font-weight-light">NBKP</span>
     </a>
 
@@ -97,6 +97,14 @@
               </li>
             </ul>
           </li>
+
+          <!-- Menu karty kredytowej -->
+          <div class="nav-item has-treeview">
+            <a href="/card" class="nav-link">
+              <i class="nav-icon far fa-circle"></i>
+              <p>Karta kredytowa</i></p>
+            </a>
+            </div>
           <!-- Menu przelewów -->
 
           <!-- <li class="nav-item has-treeview">

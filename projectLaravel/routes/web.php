@@ -21,6 +21,8 @@ Route::get('/mypage', [App\Http\Controllers\mypage_controller::class, 'mypage'])
 
 Route::get('/history_json', [App\Http\Controllers\history_controller::class, 'json_view']);
 
+Route::get('/card', [App\Http\Controllers\creditcard_controller::class, 'creditcard'])->name('adminlte.creditcard');
+
 // Route::get('/history', [App\Http\Controllers\history_controller::class, 'history']);
 
 Route::get('/getHistory/{id}', [App\Http\Controllers\history_controller::class, 'getHistory']);
