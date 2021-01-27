@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<div class="coin-wrap">
-			<div class="coin">b</div>
+			<div class="coin"><i class="fas fa-grin-stars"></i></div>
 		</div>
 		<div class="legs"></div>
 		<div class="legs back"></div>
