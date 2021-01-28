@@ -17,19 +17,29 @@
             <div class="col-md-12">
             <div class="card">
 <h1>Kreator ręcznego wprowadzania historii konta</h1>
+
 <div class="container">
-    <form method="POST" action="/historyaction">
-        {{ csrf_field() }}
-        <div>
-            <label >Rodzaj operacji</label>
-            <input type="text" name="rodzaj_operacji" placeholder="rodzaj operacji">
-            <label >Kwota</label>
-            <input type="text" name="kwota" placeholder="kwota 00.00"></input>
-        </div>
-        <div>
-            <input type="submit" value="Dodaj">
-        </div>
-    </form>
+@include('inc.messages')
+
+    {!! Form::open(['url' => '/history/store', 'method' => 'POST']) !!}
+    {{ Form::token() }}
+    <div>
+        {{Form::label('transaction', 'Rodzaj transakcji')}}
+        {{Form::text('transaction', '', ['class' => 'form-control', 'placeholder' => 'Rodzaj transakcji'])}}
+    </div>
+    <div>
+        {{Form::label('localization', 'Lokalizacja')}}
+        {{Form::text('localization', '', ['class' => 'form-control', 'placeholder' => 'Lokalizacja'])}}
+    </div>
+    <div>
+        {{Form::label('cuote', 'Kwota')}}
+        {{Form::text('cuote', '', ['class' => 'form-control', 'placeholder' => 'Kwota'])}}
+    </div>
+    <div>
+        {{Form::submit('Zatwierdź', ['class' => 'button button1'])}}
+    </div>
+    {!!Form::close() !!}
+    </>
 </div>
     </div>
     <aside class="control-sidebar control-sidebar-dark"></aside>
