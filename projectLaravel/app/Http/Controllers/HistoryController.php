@@ -2,56 +2,99 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\History;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\DB;
-use Redirect,Response;
+use App\Models\History;
 
 class HistoryController extends Controller
 {
-
-    function json_view(){
-        $data = DB::table('history')->get();
-
-        echo '<pre>';
-            print_r($data);
-        echo '</pre>';
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $records = History::orderBy('created_at', 'desc')->paginate(6);
+        return view('adminlte.history')->with('records', $records);
     }
 
-    public function history(){
-        return view('adminlte.history');
-    }
-
-    public function getHistory($id = 0){
-        if($id==0) {
-            $arr['data'] = History::orderBy('id', 'asc') -> get();
-        }else{
-            $arr['data'] = History::where('is', $id) -> first();
-        }
-        echo \json_encode($arr);
-        exit;
-    }
-
-
-    public function index(){
-
-        $histories = History::all();
-        return view('adminlte.history',compact('histories'));
-    }
-
-    public function create(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('adminlte.createHistory');
     }
 
-    public function storeHistory(){
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'transaction' => 'required',
+            'localization' => 'required',
+            'cuote' => 'required'
+        ]);
 
-        $history = new History();
-        $history->rodzaj_operacji = request('rodzaj_operacji');
-        $history->kwota = request('kwota');
-        $history->save();
+        //Create history record
+        $record = new History();
+        $record->transaction = $request->input('transaction');
+        $record->localization = $request->input('localization');
+        $record->cuote = $request->input('cuote');
+        $record->save();
 
-        return redirect('/history');
+        return redirect('/history')->with('success', 'Wpis utworzony pomyślnie');
+    }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $record = History::find($id);
+        return view('adminlte.singleRecord')->with('record', $record);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

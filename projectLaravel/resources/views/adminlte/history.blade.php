@@ -23,7 +23,6 @@
       </div>
     </a>
   </div>
-  @if(count($records) > 1)
     @foreach($records as $record)
       <div>
         <a href="/history/{{$record->id}}">
@@ -33,9 +32,7 @@
         </a>
       </div>
     @endforeach
-  @else
-    <p>No records found</p>
-  @endif
+
 
 
 @include('layouts.footer')
