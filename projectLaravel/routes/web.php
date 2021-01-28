@@ -32,6 +32,7 @@ Route::get('/admin', [App\Http\Controllers\admin_controller::class, 'allUsers'])
 Route::delete('/deleteUser/{id}', [App\Http\Controllers\admin_controller::class, 'deleteUser']);
 Route::post('/user/store', [App\Http\Controllers\admin_controller::class, 'store']);
 
+Route::get('/list', [App\Http\Controllers\allhistory::class, 'list']);
 //Historia rachunku
 Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index']);
 Route::get('/addHistory', [App\Http\Controllers\HistoryController::class, 'create']);
