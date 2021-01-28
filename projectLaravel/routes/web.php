@@ -19,15 +19,22 @@ Route::get('/kantor', [App\Http\Controllers\cantor_ctrl::class, 'calculator'])->
 
 Route::get('/mypage', [App\Http\Controllers\mypage_controller::class, 'mypage'])->name('adminlte.mypage');
 
-//Administracja kontami użytkowników
-Route::get('/admin', [App\Http\Controllers\admin_controller::class, 'allUsers']);
-Route::delete('/deleteUser/{id}', [App\Http\Controllers\admin_controller::class, 'deleteUser']);
+Route::get('/history_json', [App\Http\Controllers\history_controller::class, 'json_view']);
 
-//Historia rachunku
-Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index']);
-Route::get('/addHistory', [App\Http\Controllers\HistoryController::class, 'create']);
-Route::post('/history/store', [App\Http\Controllers\HistoryController::class, 'store']);
-Route::get('/history/{id}', [App\Http\Controllers\HistoryController::class, 'show']);
-Route::get('/history/edit/{id}', [App\Http\Controllers\HistoryController::class, 'edit']);
-Route::put('/history/update/{id}', [App\Http\Controllers\HistoryController::class, 'update']);
-Route::delete('/history/delete/{id}', [App\Http\Controllers\HistoryController::class, 'destroy']);
+Route::get('/card', [App\Http\Controllers\creditcard_controller::class, 'creditcard'])->name('adminlte.creditcard');
+
+// Route::get('/history', [App\Http\Controllers\history_controller::class, 'history']);
+
+Route::get('/getHistory/{id}', [App\Http\Controllers\history_controller::class, 'getHistory']);
+
+
+
+Route::get('/history',[App\Http\Controllers\history_controller::class, 'index']);
+
+Route::get('/addHistory',[App\Http\Controllers\history_controller::class, 'create']);
+
+Route::post('/historyaction', [App\Http\Controllers\history_controller::class, 'storeHistory']);
+
+Route::get('/admin', [App\Http\Controllers\admin_controller::class, 'allUsers']);
+
+Route::delete('/deleteUser/{id}', [App\Http\Controllers\admin_controller::class, 'deleteUser']);

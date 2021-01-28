@@ -21,11 +21,10 @@
         {{-- Logo --}}
         <div class="{{ $auth_type ?? 'login' }}-logo">
             <a href="{{ $dashboard_url }}">
-                <img src="{{ asset(config('adminlte.logo_img')) }}" height="50">
-                {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+            <i class="fas fa-piggy-bank fa-flip-horizontal"></i>
+                {!! config('', '<b>Naczelny Bank Królestwa Polskiego</b>') !!}
             </a>
         </div>
-
         {{-- Card Box --}}
         <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
 
