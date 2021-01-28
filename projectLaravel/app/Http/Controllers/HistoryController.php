@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 use Redirect,Response;
 
-class history_controller extends Controller
+class HistoryController extends Controller
 {
 
     function json_view(){

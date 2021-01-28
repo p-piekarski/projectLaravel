@@ -15,9 +15,12 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            // $table->int('user_id');
+            $table->string('transaction');
+            $table->string('localization');
+            $table->double('cuote');
+            // $table->double('balance');
             $table->timestamps();
-            $table->string('rodzaj_operacji');
-            $table->double('kwota');
         });
     }
 

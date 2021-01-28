@@ -14,9 +14,10 @@
       <div class="container-fluid">
         <h3><label>{{ Auth::user()->name}}</label></h3>
         <h3>e-mail: <label>{{ Auth::user()->email}}</label></h3>
-        <h3>zmień hasło: <input type="text"></input></h3>
+        
+        <!-- <h3>zmień hasło: <input type="text"></input></h3>
         <button><a href="/home">Zapisz</a></button>
-        <button>Anuluj</button>
+        <button>Anuluj</button> -->
         
               <aside class="control-sidebar control-sidebar-dark"></aside>
   @include('layouts.footer')
