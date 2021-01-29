@@ -19,14 +19,14 @@
         <p> - dodawanie nowych klientów - jest</p>
         <p> - uwierzytelnianie - jest</p>
         <p> - przelewy miedzy klientami - ZROBIC</p>
-        <p> - historia operacji - jest (powiedzmy)</p>
+        <p> - historia operacji - jest</p>
         <p> - wyswietlanie nazwy banku do ktorego realizowany jest przelew</p>
         <p> - walidacja danych - jest</p>
         <p> - stan konta</p>
-        <p> - karta kredytowa</p>
+        <p> - karta kredytowa - jest</p>
         <p> - kredyt</p>
-        <p> - testowanie</p>
-        <p></p>
+        <p> - testowanie - przetestowane</p>
+        <p> - zastosowanie systemu kontroli wersji - git - jest git</p>
       </div>
     </section>
   </div>

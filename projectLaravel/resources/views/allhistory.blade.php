@@ -23,18 +23,19 @@
         <div class="row">
             <div class="col-md-12">
             <div class="card">
-<h1>Kreator ręcznego wprowadzania historii konta</h1>
+<h1>Historia</h1>
 
 <div class="container">
 @foreach($data as $item)
-<ul>
-<li>{{$item->transaction}}_______{{$item->localization}}_______{{$item->cuote}}_______{{$item->created_at}}</li>
-</ul>
+        <h3>{{$item->transaction}} {{$item->cuote}}zł</h3>
+        <small>Lokalizacja: {{$item->localization}} </small>
+        <small>data: {{$item->created_at}}</small>
+        </a>
+      
 @endforeach
-<div>
+<br>
 {{$data->links()}}
-</div>
-</div>
+
     </div>
     <aside class="control-sidebar control-sidebar-dark"></aside>
 </div>
