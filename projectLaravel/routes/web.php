@@ -27,6 +27,7 @@ Route::get('/editUser/{id}', [App\Http\Controllers\admin_controller::class, 'edi
 Route::post('/updateUser/{id}', [App\Http\Controllers\admin_controller::class, 'update']);
 Route::delete('/deleteUser/{id}', [App\Http\Controllers\admin_controller::class, 'deleteUser']);
 
+Route::get('/list', [App\Http\Controllers\allhistory::class, 'list']);
 //Historia rachunku
 Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index']);
 Route::get('/addHistory', [App\Http\Controllers\HistoryController::class, 'create']);
