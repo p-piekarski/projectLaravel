@@ -27,7 +27,9 @@
 
 <div class="container">
 @foreach($data as $item)
-<li>{{$item->transaction}}</li>
+<ul>
+<li>{{$item->transaction}}_______{{$item->localization}}_______{{$item->cuote}}_______{{$item->created_at}}</li>
+</ul>
 @endforeach
 <div>
 {{$data->links()}}

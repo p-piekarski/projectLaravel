@@ -23,9 +23,16 @@
       </div>
     </a>
   </div>
+  <div class="info-box mb-3">
+    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-bars"></i></span>
+    <a href="/list" class="nav-link">
+      <div class="info-box-content">
+        <span class="info-box-text">Historia</span>
+      </div>
+    </a>
+  </div>
     @foreach($records as $record)
       <div>
-        <a href="/history/{{$record->id}}">
         <h3>{{$record->transaction}}</h3>
         <small>Lokalizacja: {{$record->localization}}, </small>
         <small>kwota: {{$record->cuote}}.</small>
