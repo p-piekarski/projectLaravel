@@ -68,7 +68,7 @@ tr:nth-child(even) {
     <td>{{$user -> email }}</td>
     <td>
       <!-- Edytowanie użytkownika -->
-      <a href="/edit/{{$user->id}}"><button class="button button1">Edit</button></a>
+      <a href="/editUser/{{$user->id}}"><button class="button button1">Edit</button></a>
 
       <!-- Usuwanie użytkownika -->
       <form action="deleteUser/{{ $user->id }}" method="POST">
