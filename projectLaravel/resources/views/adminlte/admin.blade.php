@@ -67,16 +67,18 @@ tr:nth-child(even) {
     <td>{{$user -> name }}</td>
     <td>{{$user -> email }}</td>
     <td>
-        <a href="/mypage">
-        <button class="button button1">Edit</button></a>
-        <form action="deleteUser/{{ $user->id }}" method="POST">
-              {{csrf_field()}}
-              {{method_field('DELETE')}}
-                <button type="submit" class="button button2">DELETE</button>
-              </form>
+      <!-- Edytowanie użytkownika -->
+      <a href="/edit/{{$user->id}}"><button class="button button1">Edit</button></a>
+
+      <!-- Usuwanie użytkownika -->
+      <form action="deleteUser/{{ $user->id }}" method="POST">
+        {{csrf_field()}}
+        {{method_field('DELETE')}}
+        <button type="submit" class="button button2">DELETE</button>
+      </form>
     </td>
-</tr>
-@endforeach
+  </tr>
+  @endforeach
 </table>
 
 </body>

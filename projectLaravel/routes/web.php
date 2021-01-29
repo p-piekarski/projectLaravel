@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -28,15 +22,15 @@ Route::get('/mypage', [App\Http\Controllers\mypage_controller::class, 'mypage'])
 Route::get('/card', [App\Http\Controllers\creditcard_controller::class, 'creditcard'])->name('adminlte.creditcard');
 
 //Administracja kontami użytkowników
-Route::get('/admin', [App\Http\Controllers\admin_controller::class, 'allUsers']);
+Route::get('/admin', [App\Http\Controllers\admin_controller::class, 'index']);
+Route::get('/editUser/{id}', [App\Http\Controllers\admin_controller::class, 'edit']);
+Route::post('/updateUser/{id}', [App\Http\Controllers\admin_controller::class, 'update']);
 Route::delete('/deleteUser/{id}', [App\Http\Controllers\admin_controller::class, 'deleteUser']);
-Route::post('/user/store', [App\Http\Controllers\admin_controller::class, 'store']);
 
 //Historia rachunku
 Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index']);
 Route::get('/addHistory', [App\Http\Controllers\HistoryController::class, 'create']);
 Route::post('/history/store', [App\Http\Controllers\HistoryController::class, 'store']);
 Route::get('/history/{id}', [App\Http\Controllers\HistoryController::class, 'show']);
-Route::get('/history/edit/{id}', [App\Http\Controllers\HistoryController::class, 'edit']);
 Route::put('/history/update/{id}', [App\Http\Controllers\HistoryController::class, 'update']);
 Route::delete('/history/delete/{id}', [App\Http\Controllers\HistoryController::class, 'destroy']);

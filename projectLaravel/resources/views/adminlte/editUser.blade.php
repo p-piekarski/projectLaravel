@@ -13,38 +13,26 @@
     <section class="content">
     <div class="container-fluid">
 
-    <h3><label>{{ Auth::user()->name}}</label></h3>
-    <h3>e-mail: <label>{{ Auth::user()->email}}</label></h3>
-    <h3>zmień hasło: <input type="text"></input></h3>
-    <button><a href="/home">Zapisz</a></button>
-    <button>Anuluj</button>
-
-    <h3>Forms:</h3>
-
     <div class="container">
-        @include('inc.messages')
-        {!! Form::open(['url' => '/user/store', 'action'=> [$user->id], 'method' => 'POST']) !!}
-        {{ Form::token() }}
+        <form method="POST" action="{{url('/updateUser/'.$user->id) }}">
+        @csrf
         <div>
-            {{Form::label('name', 'Imie i Nazwisko')}}
-            {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Podaj nowe imie i nazwisko'])}}
+            <label>Name</label>
+            <input type="text" name="name" value="{{old('name')?? $user->name }}" class="form-control" placeholder="Imie i nazwisko">
         </div>
         <div>
-            {{Form::label('email', 'e-mail')}}
-            {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'podaj nowy adres email'])}}
+            <label>email</label>
+            <input type="text" name="email" value="{{old('email')?? $user->email }}" class="form-control" placeholder="email">
         </div>
         <div>
-            {{Form::label('password', 'Hasło')}}
-            {{Form::text('password', '', ['class' => 'form-control', 'placeholder' => 'Podaj nowe hasło'])}}
+            <label>Password</label>
+            <input type="text" name="password" value="{{old('password')?? $user->password }}" class="form-control" placeholder="Hasło">
         </div>
-        <div>
-            {{Form::submit('Zatwierdź', ['class' => 'button button1'])}}
-        </div>
-        {!!Form::close() !!}
+        <button>Submit</button>
+    </form>
     </div>
-</div>
-<aside class="control-sidebar control-sidebar-dark"></aside>
-@include('layouts.footer')
+    <aside class="control-sidebar control-sidebar-dark"></aside>
+    @include('layouts.footer')
 </div>
 @include('layouts.scripts')
 </body>
