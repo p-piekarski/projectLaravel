@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoriesTable extends Migration
+class CreateAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,18 @@ class CreateHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('histories');
+        Schema::dropIfExists('accounts');
 
-        Schema::create('histories', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             // $table->unique('id');
             // $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('transaction');
-            $table->string('localization');
-            $table->double('cuote');
+            // $table->unique('bid');
+            // $table->foreign('bid')->references('id')->on('ballances')->onDelete('cascade');
+            // $table->unique('hid');
+            // $table->foreign('hid')->references('id')->on('histories')->onDelete('cascade');
+            $table->string('controll_number', 2);
+            $table->string('bank_id', 8);
             $table->timestamps();
         });
     }
@@ -33,6 +36,6 @@ class CreateHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('histories');
+        Schema::dropIfExists('accounts');
     }
 }
