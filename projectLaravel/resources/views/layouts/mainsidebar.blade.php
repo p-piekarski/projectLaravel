@@ -45,7 +45,7 @@
 
           <!-- Menu karty kredytowej -->
           <div class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="transfer" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>Przelew</i></p>
             </a>

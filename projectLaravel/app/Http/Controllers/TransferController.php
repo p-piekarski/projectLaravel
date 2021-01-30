@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transfer;
+use App\Models\History;
 
 
 class TransferController extends Controller
@@ -53,6 +54,13 @@ class TransferController extends Controller
         $tr->title = $request->input('title');
         $tr->quote = $request->input('quote');
         $tr->save();
+
+        //Add to History
+        $trh = new History();
+        $trh->transaction = $request->input('title');
+        $trh->localization = $request->input('name');
+        $trh->cuote = $request->input('quote');
+        $trh->save();
 
         return redirect('/home');
     }
