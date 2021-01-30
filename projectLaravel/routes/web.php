@@ -35,3 +35,8 @@ Route::post('/history/store', [App\Http\Controllers\HistoryController::class, 's
 Route::get('/history/{id}', [App\Http\Controllers\HistoryController::class, 'show']);
 Route::put('/history/update/{id}', [App\Http\Controllers\HistoryController::class, 'update']);
 Route::delete('/history/delete/{id}', [App\Http\Controllers\HistoryController::class, 'destroy']);
+
+//
+Route::get('/account', [App\Http\Controllers\BallanceController::class, 'index']);
+Route::get('/transfer', [App\Http\Controllers\TransferController::class, 'create']);
+Route::post('/transfer/store', [App\Http\Controllers\TransferController::class, 'store']);
